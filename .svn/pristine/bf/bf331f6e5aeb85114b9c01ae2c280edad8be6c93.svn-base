@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>添加文件</title>
+</head>
+<body>
+<form action="addFile" method="post" enctype="multipart/form-data">
+    文件 ： <input type="file" name="file"><br>
+    <input type="submit">
+</form>
+<p th:text="${id}"></p>
+<p th:text="${name}"></p>
+<p th:text="${account}"></p>
+</body>
+</html>

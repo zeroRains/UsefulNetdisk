@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+</head>
+<body>
+<h1>文件查看页面</h1>
+<a href="addForm">添加</a>
+<table border="1" style="width: 800px;">
+    <tr>
+        <th>名称</th>
+        <th>类型</th>
+        <th>大小</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="f:${list}">
+        <form action="/modify" method="post">
+            <td>
+                <input name="newName" type="text"  th:value="${f.name}"/>
+                <input hidden type="text" name="oldName" th:value="${f.name}">
+            </td>
+            <td th:text="${f.type}"></td>
+            <td th:text="${f.len}"></td>
+            <td>
+                <input type="submit" value="重命名">
+                <a th:href="@{del(path=${f.name})}">,删除</a>
+                <a  th:href="@{download(name=${f.name})}">,下载</a>
+            </td>
+        </form>
+    </tr>
+</table>
+</body>
+
+<script>
+
+</script>
+</html>

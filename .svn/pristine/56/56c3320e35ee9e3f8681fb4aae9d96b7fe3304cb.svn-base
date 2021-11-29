@@ -1,0 +1,32 @@
+package com.lulinjun.hdfs.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PathService {
+    @Autowired
+    PathMapper pm;
+
+    public boolean createPath(String md5, String path) {
+        boolean res = true;
+        try {
+            pm.createPath(new Path(md5, path));
+        } catch (Exception e) {
+            e.printStackTrace();
+            res = false;
+        }
+        return res;
+    }
+    
+    public String getPath(String md5){
+        String res = null;
+        try {
+            Path path = pm.getPathByCode(md5);
+            res = path.getDecode();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return res;
+    }
+}

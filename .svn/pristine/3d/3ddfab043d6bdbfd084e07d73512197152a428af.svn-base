@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+</head>
+<body>
+    <h1>文件查看页面</h1>
+    <table border="1" style="width: 800px;">
+        <tr>
+            <th>名称</th>
+            <th>类型</th>
+            <th>大小</th>
+        </tr>
+        <tr th:each="f:${list}">
+            <td th:text="${f.name}"></td>
+            <td th:text="${f.dir}?'文件夹':'文件'"></td>
+            <td th:text="${f.len}"></td>
+        </tr>
+    </table>
+</body>
+</html>

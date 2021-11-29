@@ -1,0 +1,40 @@
+package com.lulinjun.hdfs.model;
+
+public class HDFSFile {
+    private String name;
+    private boolean dir;
+    private long len;
+
+    public HDFSFile() {
+    }
+
+    public HDFSFile(String name, boolean dir, long len) {
+        this.name = name;
+        this.dir = dir;
+        this.len = len;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isDir() {
+        return dir;
+    }
+
+    public void setDir(boolean dir) {
+        this.dir = dir;
+    }
+
+    public long getLen() {
+        return len;
+    }
+
+    public void setLen(long len) {
+        this.len = len;
+    }
+}

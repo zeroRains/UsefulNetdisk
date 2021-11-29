@@ -1,0 +1,30 @@
+package com.lulinjun.hdfs.controller;
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+public class ViewController {
+
+//    @ResponseBody
+    @RequestMapping("/home")
+    public String sayHello(ModelMap model){
+        Map<String,String> user = new HashMap<>();
+        user.put("userid","9527");
+        user.put("username","xiaoli");
+        user.put("userage","22");
+
+        model.put("user",user);
+        return "home";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "Login";
+    }
+}

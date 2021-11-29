@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>好用网盘</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/sign.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript"
+            src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+</head>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">好用网盘</div>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;" id="usernames" th:text="${username}">ZeroRains </a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="/user/info">基本资料</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="/out">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed"><a class=""
+                                                               href="javascript:;">网盘功能</a>
+                    <dl class="layui-nav-child">
+                        <dd >
+                            <a href="/" class="layui-icon layui-icon-home" style="color: #ffffff"> 个人文件夹</a>
+                        </dd>
+                        <dd class="layui-this">
+                            <a href="/star" class="layui-icon layui-icon-star" style="color: #ffffff"> 收藏文件夹</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+
+        <div style="padding: 15px;">
+            <div>
+                <span style="font-size: large;">当前路径为：</span>
+                <span id="totalPath" th:text="${path}"></span>
+            </div>
+            <div style="margin-top:10px;">
+                <button type="button"
+                        id="backPath"
+                        class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius layui-icon layui-icon-return">
+                    返回
+                </button>
+                <button type="button"
+                        id="createDir"
+                        class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius layui-icon layui-icon-list">
+                    新建文件夹
+                </button>
+                <button type="button"
+                        id="upload"
+                        class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius layui-icon layui-icon-upload">
+                    上传文件
+                </button>
+
+
+            </div>
+            <div style="margin-bottom: 30px">
+                <table id="tables" class="layui-table" lay-filter="demoEvent">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'name',sort: true, event: 'open', style:'cursor: pointer; '}">名称</th>
+                        <th lay-data="{field:'type',sort: true, width:80}">类型</th>
+                        <th lay-data="{field:'len',sort: true, width:150 }">文件大小</th>
+                        <th lay-data="{fixed: 'right', width:250, align:'center', toolbar: '#barDemo'}">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="open">打开</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="share">分享</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">重命名</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/javascript">
+    var path = $('#totalPath').text();
+    var attrs = `{url:'/star/lists?path=${path}'}`
+    $('#tables').attr('lay-data', attrs);
+</script>
+<script>
+    $("#createDir").click(function () {
+        layer.prompt({
+            formType: 2
+            , title: "新建文件夹"
+        }, function (value, index) {
+            layer.close(index);
+            var path = $('#totalPath').text() + value + "/";
+            var jsonData = {"path": path.replaceAll("/", ",")};
+            $.ajax({
+                url: "/star/createdir",
+                data: jsonData,
+                type: "POST",
+                success: function (res) {
+                    if (res !== "fail") {
+                        var layer = layui.layer;
+                        var path = $('#totalPath').text();
+                        path = path.replaceAll('/', ',')
+                        location.href = `/star/move?path=${path}`;
+                        layer.msg("文件夹创建成功！！！", {"time": 1000});
+                    }
+                }
+            })
+        });
+    })
+    // <!--    返回上层目录-->
+    $("#backPath").click(function () {
+        var path = $('#totalPath').text();
+        if (path !== "/") {
+            if (path[path.length - 1] === "/")
+                path = path.slice(0, path.length - 1)
+            path = path.slice(0, path.lastIndexOf("/") + 1)
+            path = path.replaceAll('/', ',')
+            location.href = `/star/move?path=${path}`;
+        } else {
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.alert('当前已经是用户的根目录了！');
+            });
+        }
+    })
+    //上传
+    layui.use('upload', function () {
+        var upload = layui.upload;
+        var path = $('#totalPath').text();
+        path = path.replaceAll('/', ',')
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            , url: `/star/addFile?name=${path}` //上传接口
+            , done: function () {
+                layui.use('layer', function (res) {
+                    var layer = layui.layer;
+                    var path = $('#totalPath').text();
+                    path = path.replaceAll('/', ',')
+                    location.href = `/star/move?path=${path}`;
+                    layer.msg("上传成功！", {"time": 1000})
+                })
+            }
+            , error: function () {
+                //请求异常回调
+                layui.use('layer', function (res) {
+
+                    var layer = layui.layer;
+                    layer.alert('上传失败！');
+                });
+            }
+        });
+    });
+    // 表格渲染
+    layui.use('table', function () {
+        var table = layui.table;
+        //监听单元格事件
+        table.on('tool(demoEvent)', function (obj) {
+            var data = obj.data;
+            // 重命名
+            if (obj.event === 'edit') {
+                var oldName = $('#totalPath').text() + data.name;
+                oldName = oldName.replaceAll('/', ',')
+                layer.prompt({
+                    formType: 2
+                    , title: '修改 名称 [' + data.name + ']'
+                    , value: data.name
+                }, function (value, index) {
+                    layer.close(index);
+                    //这里一般是发送修改的Ajax请求
+                    var newName = $('#totalPath').text() + value;
+                    var jsonData = {"oldName": oldName, "newName": newName.replaceAll("/", ",")};
+                    $.ajax({
+                        url: "/star/modify",
+                        data: jsonData,
+                        type: 'POST',
+                        success: function (data) {
+                            if (data !== "fail") {
+                                var path = $('#totalPath').text();
+                                path = path.replaceAll('/', ',')
+                                location.href = `/star/move?path=${path}`;
+                                layer.msg("修改成功！！！", {"time": 1000});
+                            }
+                        },
+                    });
+                    //同步更新表格和缓存对应的值
+                    obj.update({
+                        name: value
+                    });
+                });
+                //    下载或打开文件夹
+            } else if (obj.event === 'open') {
+                if (data.type === "文件夹") {
+                    //这里调用打开文件夹接口
+                    var path = $('#totalPath').text() + data.name + '/';
+                    path = path.replaceAll('/', ',')
+                    location.href = `/star/move?path=${path}`;
+                } else {
+                    //这里调用下载接口
+                    var path = $('#totalPath').text() + data.name;
+                    location.href = `/star/download?name=${path}`;
+                }
+            } else if (obj.event === 'del') {
+                var path = $('#totalPath').text() + data.name;
+                path = path.replaceAll('/', ',')
+                var param = {"path": path};
+                $.ajax({
+                    url: "/star/del",
+                    data: param,
+                    type: 'POST',
+                    success: function (data) {
+                        if (data !== "fail") {
+                            layer.msg("删除成功！！！", {"time": 1000}, function () {
+                                var path = $('#totalPath').text();
+                                path = path.replaceAll('/', ',')
+                                location.href = `/star/move?path=${path}`;
+                            });
+                        } else {
+                            layer.msg("删除失败！！！", {"time": 1000})
+                        }
+                    },
+                });
+            } else if (obj.event === 'share') {
+                if (data.type === "文件") {
+                    layer.msg("很抱歉，暂时只支持分享文件夹!",{"time":1000});
+                } else {
+                    $.ajax({
+                        url:"/star/share/create",
+                        data:{"path":$('#totalPath').text().replaceAll("/", ",") +data.name + ","},
+                        type:"POST",
+                        success:function(res){
+                            if(res !== 'fail'){
+                                layer.alert(`这个文件夹的分享链接为：${res}`)
+                            }
+                        }
+                    })
+
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

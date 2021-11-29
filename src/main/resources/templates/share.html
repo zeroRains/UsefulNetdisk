@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>好用网盘</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/sign.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <link rel="shortcut icon" href="/image/233.jpg">
+    <script type="text/javascript"
+            src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+</head>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div ><a class="layui-logo" href="/">好用网盘——分享文件夹</a></div>
+    </div>
+
+
+    <div class="layui-body" style="left: 20px;right: 20px;margin-top:30px">
+        <div style="margin-bottom: 30px">
+            <span style="font-size: large;">当前路径为：</span>
+            <span id="totalPath" th:text="${res}"></span>
+
+            <button type="button"
+                    style="float: right"
+                    id="star"
+                    class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius layui-icon layui-icon-star">
+                收藏文件夹
+            </button>
+            <button type="button"
+                    style="float: right;margin-right: 10px"
+                    id="backPath"
+                    class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius layui-icon layui-icon-return">
+                返回
+            </button>
+        </div>
+        <!-- 内容主体区域 -->
+        <div style="margin-bottom: 30px">
+            <table id="tables" class="layui-table" lay-filter="demoEvent">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'name',sort: true, event: 'open', style:'cursor: pointer; '}">名称</th>
+                    <th lay-data="{field:'type',sort: true, width:80}">类型</th>
+                    <th lay-data="{field:'len',sort: true, width:150 }">文件大小</th>
+                    <th lay-data="{fixed: 'right', width:100, align:'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="open">打开</a>
+</script>
+
+
+<script type="text/javascript" th:inline="javascript">
+    <!--    这里可以作为问题点-->
+    var check = [[${first}]];
+    if (check != null) {
+        window.localStorage.setItem("sharePath", check);
+    }
+    var path = $('#totalPath').text().replaceAll("/", ",");
+    var attrs = `{url:'/share/list?name=${path}'}`
+    $('#tables').attr('lay-data', attrs);
+</script>
+<script type="text/javascript">
+    //返回
+    $("#backPath").click(function () {
+        var path = $('#totalPath').text();
+        if (path !== window.localStorage.getItem("sharePath")) {
+            if (path[path.length - 1] === "/")
+                path = path.slice(0, path.length - 1)
+            path = path.slice(0, path.lastIndexOf("/") + 1)
+            path = path.replaceAll('/', ',')
+            location.href = `/share/move?path=${path}`;
+        } else {
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.alert('当前已经是分享文件夹的根目录了！');
+            });
+        }
+    })
+    // 收藏
+    $("#star").click(function () {
+        var path = window.localStorage.getItem("sharePath").replaceAll("/", ",")
+        $.ajax({
+            url: "/share/star",
+            data: {"path": path},
+            type: "POST",
+            success: function (res) {
+                if (res === "success") {
+                    layer.msg("收藏成功！", {"time": 1000});
+                } else if (res === "login") {
+                    location.href = "/login";
+                } else {
+                    layer.msg("收藏失败！", {"time": 1000});
+                }
+            }
+
+        })
+    })
+    // 表格渲染
+    layui.use('table', function () {
+        var table = layui.table;
+        //监听单元格事件
+        table.on('tool(demoEvent)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'open') {
+                if (data.type === "文件夹") {
+                    //这里调用打开文件夹接口
+                    var path = $('#totalPath').text() + data.name + '/';
+                    path = path.replaceAll('/', ',')
+                    location.href = `/share/move?path=${path}`;
+                } else {
+                    //这里调用下载接口
+                    var path = $('#totalPath').text() + data.name;
+                    location.href = `/share/download?name=${path}`;
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

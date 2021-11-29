@@ -1,0 +1,37 @@
+package com.lulinjun.hdfs.controller;
+
+
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+public class ViewController {
+
+//    @ResponseBody
+    @RequestMapping("/")
+    public String sayHello(ModelMap model,HttpSession httpSession){
+        String name = (String) httpSession.getAttribute("name");
+        if(name == null)
+            return "redirect:/login";
+        model.put("username",name);
+        model.put("path","/");
+        return "home";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "Login";
+    }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
+
+}

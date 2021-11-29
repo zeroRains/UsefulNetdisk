@@ -1,0 +1,24 @@
+package com.lulinjun.hdfs.controller;
+
+import com.lulinjun.hdfs.model.HDFSFile;
+import com.lulinjun.hdfs.service.HDFSService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+public class HdfsController {
+    @Autowired
+    private HDFSService hdfsService;
+
+    @RequestMapping("/lists")
+    public String lists(ModelMap modelMap){
+        List<HDFSFile> res = hdfsService.getDirectoryFromHdfs();
+        modelMap.put("list",res);
+        return "lists";
+    }
+}

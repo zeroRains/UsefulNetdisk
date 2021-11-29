@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎使用好用网盘</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/sign.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript"
+            src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+</head>
+
+<body class="layui-unselect lau-sign-body"
+      style="background-image: url('static/image/233.jpg'); background-repeat: no-repeat; ">
+
+<form action="www.baidu.com" class="layui-form" id="myForm">
+    <div class="layui-form layui-form-pane lau-sign-form">
+        <h1 class="lau-sign-title">好用网盘</h1>
+        <p class="lau-sign-subtitle">登录</p>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i
+                    class="iconfont layui-icon-extend-bianhao"></i> 账号</label>
+            <div class="layui-input-block">
+                <input type="text" name="num" placeholder="请输入用户名"
+                       autocomplete="off" value="lulinjun_work1" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><i
+                    class="layui-icon layui-icon-password"></i> 密码</label>
+            <div class="layui-input-block">
+                <input type="password" name="psw" placeholder="请输入密码"
+                       autocomplete="off" value="123456" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" id="loginsub">
+            <button type="button" class="layui-btn layui-btn-fluid" lay-submit
+                    lay-filter="login">登 录
+            </button>
+        </div>
+        <div class="layui-form-item" id="registersub">
+            <button type="button" class="layui-btn layui-btn-fluid" lay-submit
+                    lay-filter="register">注 册
+            </button>
+        </div>
+    </div>
+</form>
+
+</body>
+<script src="/Sys/js/layui.js"></script>
+
+
+<script type="text/javascript">
+    var idendata = "";
+    $(function () {
+        layui.use('form', function () {
+            var form = layui.form;
+            //监听提交
+            form.on('submit(login)', function (data) {
+                var loginjson = JSON.stringify(data.field);
+                var logindata = JSON.parse(loginjson);
+                $.ajax({
+                    url: "logins",
+                    data: logindata,
+                    type: 'POST',
+                    success: function (data) {
+                        if (data.split("@")[0] == 'share') {
+                            location.href = `/share/home?path=${data.split("@")[1]}`
+                        } else if (data != "fail") {
+                            layer.msg("登录成功！！！", {"time": 1000}, function () {
+                                location.href = "/"
+                            });
+                        } else {
+                            layui.use('layer', function () {
+                                var layer = layui.layer;
+                                layer.open({
+                                    type: 4,
+                                    content: ["账号或者密码或者身份不匹配",
+                                        "#loginsub"],
+                                    shade: 0,
+                                    tips: [2, '#c00'],
+                                    closeBtn: 0,
+                                    time: 2000,
+                                })
+                            });
+                        }
+                    },
+
+                });
+            });
+            form.on('submit(register)', function () {
+                location.href = "register"
+            })
+        });
+        layui.use('form', function () {
+            var form = layui.form;
+            form.on('radio(iden)', function (data) {
+                idendata = data.value;
+            });
+        });
+    });
+
+
+</script>
+</html>

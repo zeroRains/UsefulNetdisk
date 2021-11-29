@@ -1,0 +1,30 @@
+package com.lulinjun.hdfs.model;
+
+public class Path {
+    private String code;
+    private String decode;
+
+    public Path() {
+    }
+
+    public Path(String code, String decode) {
+        this.code = code;
+        this.decode = decode;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getDecode() {
+        return decode;
+    }
+
+    public void setDecode(String decode) {
+        this.decode = decode;
+    }
+}

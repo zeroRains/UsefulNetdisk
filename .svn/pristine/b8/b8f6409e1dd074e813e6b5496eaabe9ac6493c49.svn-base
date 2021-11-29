@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e849318c-2b8b-447c-8351-46a9440a7ee9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basework.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rename.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lulinjun/hdfs/controller/StarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lulinjun/hdfs/controller/StarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Thymeleaf+LayUI" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21E7CSoXtir4bRdTn4WS0OqQm0x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/image" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lulinjun.hdfs.config" />
+      <recent name="com.lulinjun.hdfs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\resources\static\image" />
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\resources\templates" />
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\resources\static" />
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\resources\static\image" />
+      <recent name="D:\gitLearning\lulinjun-hdfs\src\main\java\com\lulinjun\hdfs\utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.StartApp">
+    <configuration name="EncoderDecoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lulinjun.hdfs.utils.EncoderDecoder" />
+      <module name="lulinjun-hdfs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lulinjun.hdfs.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HDFSTool (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lulinjun.hdfs.utils.HDFSTool" />
+      <module name="lulinjun-hdfs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lulinjun.hdfs.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HDFSTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lulinjun.hdfs.HDFSTool" />
+      <module name="lulinjun-hdfs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lulinjun.hdfs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestConnectHDFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lulinjun.hdfs.TestConnectHDFS" />
+      <module name="lulinjun-hdfs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lulinjun.hdfs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="lulinjun-hdfs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lulinjun.hdfs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lulinjun.hdfs.StartApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.StartApp" />
+        <item itemvalue="Application.HDFSTool (1)" />
+        <item itemvalue="Application.EncoderDecoder" />
+        <item itemvalue="Application.HDFSTool" />
+        <item itemvalue="Application.TestConnectHDFS" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\ZeroRains\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\gitLearning\lulinjun-hdfs" />
+          <option name="myCopyRoot" value="D:\gitLearning\lulinjun-hdfs" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\gitLearning\lulinjun-hdfs" />
+          <option name="myCopyRoot" value="D:\gitLearning\lulinjun-hdfs" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e849318c-2b8b-447c-8351-46a9440a7ee9" name="Default Changelist" comment="" />
+      <created>1637494266465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637494266465</updated>
+      <workItem from="1637494267583" duration="4435000" />
+      <workItem from="1637499606763" duration="1389000" />
+      <workItem from="1637501190991" duration="127000" />
+      <workItem from="1637544772392" duration="2000" />
+      <workItem from="1637544786248" duration="179000" />
+      <workItem from="1637545002880" duration="303000" />
+      <workItem from="1637545335949" duration="825000" />
+      <workItem from="1637546170097" duration="369000" />
+      <workItem from="1637546557865" duration="4857000" />
+      <workItem from="1637566585564" duration="2366000" />
+      <workItem from="1637579502993" duration="25000" />
+      <workItem from="1637579544252" duration="8025000" />
+      <workItem from="1637653260498" duration="664000" />
+      <workItem from="1637719198774" duration="4629000" />
+      <workItem from="1637732351294" duration="6796000" />
+      <workItem from="1637740636930" duration="7401000" />
+      <workItem from="1637756637929" duration="514000" />
+      <workItem from="1637759367805" duration="78000" />
+      <workItem from="1637759850929" duration="6000" />
+      <workItem from="1637807280923" duration="9080000" />
+      <workItem from="1637824576610" duration="4088000" />
+      <workItem from="1637840115884" duration="5757000" />
+      <workItem from="1637845956285" duration="28249000" />
+      <workItem from="1637917782273" duration="32000" />
+      <workItem from="1638084234004" duration="1373000" />
+      <workItem from="1638087360276" duration="2835000" />
+      <workItem from="1638090245550" duration="2687000" />
+      <workItem from="1638092968944" duration="7945000" />
+      <workItem from="1638101022453" duration="11952000" />
+    </task>
+    <task id="LOCAL-00001" summary="完成连接测试和一部分功能的编写(虽然主要是老师的代码，但是都能看懂)">
+      <created>1637499697119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637499697119</updated>
+    </task>
+    <task id="LOCAL-00002" summary="现在是自己写了一个读取文件的，改的话，HDFS应该是改不了的吧，直接用put的那个方法覆盖掉就行了">
+      <created>1637500833884</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637500833884</updated>
+    </task>
+    <task id="LOCAL-00003" summary="解决显示文件和文件夹的问题">
+      <created>1637566936702</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637566936702</updated>
+    </task>
+    <task id="LOCAL-00004" summary="解决显示问题">
+      <created>1637567038161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637567038161</updated>
+    </task>
+    <task id="LOCAL-00005" summary="解决显示问题">
+      <created>1637567103596</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637567103596</updated>
+    </task>
+    <task id="LOCAL-00006" summary="删除成功">
+      <created>1637567797226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637567797226</updated>
+    </task>
+    <task id="LOCAL-00007" summary="下载，重命名完成">
+      <created>1637586835535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637586835535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="主页主体">
+      <created>1637736064731</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637736064731</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mybatis and mysql can be use">
+      <created>1637744115370</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637744115370</updated>
+    </task>
+    <task id="LOCAL-00010" summary="下载，重命名完成">
+      <created>1637744335490</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637744335490</updated>
+    </task>
+    <task id="LOCAL-00011" summary="完成注册接口">
+      <created>1637759429822</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637759429822</updated>
+    </task>
+    <task id="LOCAL-00012" summary="完成登录">
+      <created>1637809100502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637809100502</updated>
+    </task>
+    <task id="LOCAL-00013" summary="个人信息修改">
+      <created>1637825825869</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637825825870</updated>
+    </task>
+    <task id="LOCAL-00014" summary="注册和显示网盘内容完成">
+      <created>1637846329541</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637846329541</updated>
+    </task>
+    <task id="LOCAL-00015" summary="网盘主界面设计，及逻辑">
+      <created>1637848911801</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1637848911801</updated>
+    </task>
+    <task id="LOCAL-00016" summary="文件路径定位方式解决">
+      <created>1637850548907</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637850548907</updated>
+    </task>
+    <task id="LOCAL-00017" summary="完成文件夹打开功能">
+      <created>1637851637740</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637851637740</updated>
+    </task>
+    <task id="LOCAL-00018" summary="完成下载，ajax不能调用下载接口">
+      <created>1637890974776</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637890974776</updated>
+    </task>
+    <task id="LOCAL-00019" summary="完成不同目录下的上传">
+      <created>1637901058444</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1637901058444</updated>
+    </task>
+    <task id="LOCAL-00020" summary="删除完成">
+      <created>1637903654908</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1637903654908</updated>
+    </task>
+    <task id="LOCAL-00021" summary="新建文件夹">
+      <created>1637906224127</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1637906224127</updated>
+    </task>
+    <task id="LOCAL-00022" summary="还差收藏">
+      <created>1637907101488</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1637907101488</updated>
+    </task>
+    <task id="LOCAL-00023" summary="拦截器设置">
+      <created>1638087405341</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1638087405341</updated>
+    </task>
+    <task id="LOCAL-00024" summary="还差一个分享功能">
+      <created>1638100275252</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1638100275252</updated>
+    </task>
+    <task id="LOCAL-00025" summary="还差一个分享功能">
+      <created>1638100350687</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1638100350687</updated>
+    </task>
+    <task id="LOCAL-00026" summary="收藏完成">
+      <created>1638103851398</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1638103851398</updated>
+    </task>
+    <task id="LOCAL-00027" summary="收藏完成">
+      <created>1638103869186</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1638103869186</updated>
+    </task>
+    <task id="LOCAL-00028" summary="分享完成了">
+      <created>1638106162751</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638106162751</updated>
+    </task>
+    <task id="LOCAL-00029" summary="剩下查看了">
+      <created>1638154309791</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1638154309791</updated>
+    </task>
+    <task id="LOCAL-00030" summary="剩下查看了">
+      <created>1638155557952</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1638155557952</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="解决显示文件和文件夹的问题" />
+    <MESSAGE value="解决显示问题" />
+    <MESSAGE value="删除成功" />
+    <MESSAGE value="主页主体" />
+    <MESSAGE value="mybatis and mysql can be use" />
+    <MESSAGE value="下载，重命名完成" />
+    <MESSAGE value="完成注册接口" />
+    <MESSAGE value="完成登录" />
+    <MESSAGE value="个人信息修改" />
+    <MESSAGE value="注册和显示网盘内容完成" />
+    <MESSAGE value="网盘主界面设计，及逻辑" />
+    <MESSAGE value="文件路径定位方式解决" />
+    <MESSAGE value="完成文件夹打开功能" />
+    <MESSAGE value="完成下载，ajax不能调用下载接口" />
+    <MESSAGE value="完成重命名" />
+    <MESSAGE value="完成返回上级目录" />
+    <MESSAGE value="完成不同目录下的上传" />
+    <MESSAGE value="删除完成" />
+    <MESSAGE value="新建文件夹" />
+    <MESSAGE value="还差收藏" />
+    <MESSAGE value="拦截器设置" />
+    <MESSAGE value="还差一个分享功能" />
+    <MESSAGE value="收藏完成" />
+    <MESSAGE value="分享完成了" />
+    <MESSAGE value="剩下查看了" />
+    <option name="LAST_COMMIT_MESSAGE" value="剩下查看了" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/UserController.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/HdfsController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/HdfsController.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/HdfsController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/ShareController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/controller/UserController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/utils/HDFSTool.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lulinjun/hdfs/service/StarFileService.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

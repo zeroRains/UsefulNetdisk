@@ -1,0 +1,14 @@
+package com.lulinjun.hdfs.mapper;
+
+import com.lulinjun.hdfs.model.MyUser;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+
+@Mapper
+public interface UserMapper {
+
+    @Select("SELECT * FROM users WHERE id=#{id}")
+    public List<MyUser> selectById(String id);
+}

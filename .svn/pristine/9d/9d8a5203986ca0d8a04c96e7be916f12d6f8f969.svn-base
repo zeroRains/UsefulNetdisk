@@ -1,0 +1,29 @@
+package com.lulinjun.hdfs.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.lulinjun.hdfs.model.MyUser;
+import com.lulinjun.hdfs.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Controller
+public class UserController {
+    @Autowired
+    private UserService userService;
+
+    @ResponseBody
+    @PostMapping("/logins")
+    public MyUser logins(@RequestBody JSONObject params){
+        String id = params.getString("id");
+        String password = params.getString("password");
+        List<MyUser>  users = userService.login(id,password);
+        if (users.size() == 1)
+            return users.get(0);
+        else
+            return null;
+    }
+}

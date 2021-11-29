@@ -1,0 +1,3 @@
+com\lulinjun\hdfs\StartApp.class
+com\lulinjun\hdfs\utils\HDFSTool.class
+com\lulinjun\hdfs\utils\TestConnectHDFS.class
